@@ -27,9 +27,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/AveshShaikh0408/Order-Summary)
+- Solution URL: [order-summary-github](https://github.com/AveshShaikh0408/Order-Summary)
 
-- Live Site URL: (https://order-summary-live.netlify.app/)
+- Live Site URL: [order-summary-netlify](https://order-summary-live.netlify.app/)
 
 ## My process
 
