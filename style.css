@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap");
+
+:root {
+  /* Colors */
+  --pale-blue-35: hsl(225, 100%, 94%, 0.35);
+  --pale-blue-100: hsl(225, 100%, 98%);
+  --pale-blue-200: hsl(225, 100%, 94%);
+  --bright-blue-35: hsl(245, 75%, 52%, 0.35);
+  --bright-blue-300: hsl(245, 75%, 52%);
+  --desat-blue-25: hsla(224, 23%, 55%, 0.25);
+  --desat-blue-100: hsl(224, 23%, 55%);
+  --dark-blue-100: hsl(223, 47%, 23%);
+
+  /* Color Variables */
+  --primary-color: var(--dark-blue-100);
+  --secondary-color: var(--desat-blue-100);
+  --tertiary-color: var(--pale-blue-100);
+  --accent-color: var(--bright-blue-300);
+  --background-color: var(--pale-blue-200);
+  --color-on-background: var(--pale-blue-35);
+  --shadow-color: var(--desat-blue-25);
+  --alt-shadow-color: var(--bright-blue-35);
+
+  /* Font and Different Sizes */
+  --base-font-family: "Red Hat Display", sans-serif;
+  --fw-normal: 500;
+  --fw-large: 700;
+  --fw-larger: 900;
+  --fs-title: 1.5rem;
+  --fs-paragraph: 1rem;
+  --fs-subtitle: 0.8rem;
+  --size-smallest: 0.25rem;
+  --size-smaller: 0.5rem;
+  --size-small: 0.75rem;
+  --size-normal: 1rem;
+  --size-large: 1.25rem;
+  --size-larger: 1.5rem;
+  --size-largest: 1.75rem;
+  font-size: 16px;
+  font-family: var(--base-font-family);
+  font-weight: var(--fw-normal);
+}
+
+/* ----------- Main-Container - Div ----------- */
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--size-larger);
+  background: var(--background-color)
+    url("./images/pattern-background-mobile.svg") no-repeat center top / contain;
+}
+
+/* for multiple articles in row add flex -  */
+/*
+  display: flex;
+  align-items: center;
+  justify-content: center;
+*/
+
+@media (min-width: 768px) {
+  .viewport {
+    background: var(--background-color)
+      url("./images//pattern-background-desktop.svg") no-repeat center top /
+      contain;
+  }
+}
+
+/* ----------- Sub-container - Article ----------- */
+article {
+  max-width: 375px;
+  border-radius: var(--size-normal);
+  background: var(--tertiary-color);
+  box-shadow: 0 var(--size-largest) var(--size-largest) var(--shadow-color);
+}
+
+/* ----------- Article Image ----------- */
+.article_cover {
+  height: 12rem;
+  border-radius: var(--size-normal) var(--size-normal) 0 0;
+  background: url("./images/illustration-hero.svg") no-repeat center top / cover;
+}
+
+/* ----------- Article Content ----------- */
+.article_content {
+  padding: var(--size-larger);
+}
+
+.article_content > * {
+  margin: 0;
+  text-align: center;
+  margin-top: var(--size-larger);
+}
+
+.article_content > *:first-child {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .article_content > *:first-child {
+    margin-top: var(--size-larger);
+  }
+}
+
+.title {
+  font-weight: var(--fw-larger);
+  font-size: var(--fs-title);
+  color: var(--primary-color);
+}
+
+/* ----------- Card ----------- */
+
+.card {
+  background: var(--color-on-background);
+  padding: var(--size-normal);
+  border-radius: var(--size-small);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------- Text/Subscription Section ----------- */
+.label {
+  font-weight: var(--fw-larger);
+  font-size: var(--fs-paragraph);
+  color: var(--primary-color);
+}
+
+/* commone for <P> tag */
+.paragraph {
+  font-weight: var(--fw-large);
+  font-size: var(--fs-paragraph);
+  color: var(--secondary-color);
+}
+
+a {
+  font-weight: var(--fw-larger);
+  font-size: var(--fs-subtitle);
+  color: var(--accent-color);
+  display: inline-block;
+  transition: color 100ms linear;
+  cursor: pointer;
+}
+
+a:is(:hover, :focus) {
+  opacity: 0.65;
+  text-decoration: none;
+  color: var(--bright-blue-300);
+  text-decoration: none;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.col-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--size-smallest);
+}
+
+.icon {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon#music {
+  background: url("./images//icon-music.svg") no-repeat center center / contain;
+}
+
+/* ----------- Button Container ----------- */
+.col-button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-smallest);
+}
+
+button.btn {
+  border: 0;
+  display: block;
+  padding: var(--size-normal);
+  border-radius: var(--size-small);
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-larger);
+  transition: opacity 100ms ease, color 100ms ease, box-shadow 100ms ease;
+  cursor: pointer;
+}
+
+button.btn.primary {
+  color: var(--tertiary-color);
+  background-color: var(--accent-color);
+  box-shadow: 0 var(--size-smaller) var(--size-normal) var(--alt-shadow-color);
+}
+
+button.btn.primary:is(:hover, :focus) {
+  opacity: 0.65;
+  box-shadow: none;
+}
+
+button.btn.secondary {
+  color: var(--secondary-color);
+  background: transparent;
+}
+
+button.btn.secondary:is(:hover, :focus) {
+  color: var(--primary-color);
+}
+
+/* Attribution Section */
+.attribution {
+  padding: 5px 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
