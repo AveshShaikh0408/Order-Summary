@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://i.postimg.cc/Px2WcvHT/Order-Summary-FM.png)
 
 ### Links
 
